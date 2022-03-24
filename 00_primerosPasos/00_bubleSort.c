@@ -48,7 +48,9 @@ void swap(int *i, int *j)
 /* 	Con esta version de Bubble sort:
 	1 - len - 1
 	2 - Hacinedo 2 while
+	3 - Si activo el if - break se disminuye la iteracion.
 	en un Array de 5 numeros, entraria 14 veces sumando los dos ciclos While*/
+
 void bubleSort(int *arr, int len)
 {
 	int i;
@@ -57,6 +59,7 @@ void bubleSort(int *arr, int len)
 	int	k;
 
 	i = 0;
+	k = 1;
 	repe = 0;
 
 	while (i < len - 1)
@@ -82,7 +85,7 @@ void bubleSort(int *arr, int len)
 
 int main(void)
 {
-	int arr[] = {7, 43, 9, 32, 2};
+	int arr[] = {9, 43, 2, 7, 32};
 	int len;
 
 	len = sizeof(arr) / sizeof(arr[0]);
