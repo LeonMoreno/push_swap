@@ -12,15 +12,25 @@ typedef struct s_node
 typedef struct s_stack
 {
 	a_node *head_a;
+	a_node *head_b;
 	int		siza;
 } t_stack;
 
-a_node *createnode(int num);
+//Struct et List
+a_node *createnode(int num, t_stack *stack);
 void addnodefinal(t_stack *stack, int num);
+a_node *ft_before(a_node *node, t_stack *stack);
 void pri_stack(t_stack *stack);
+void pri_stack_b(t_stack *stack);
+
+//Commands
 void ft_sa(t_stack *stack);
 void ft_rra(t_stack *stack);
-a_node *ft_before(a_node *node, t_stack *stack);
+void ft_pb(t_stack *stack);
+void ft_pa(t_stack *stack);
+
+//Sort
+void initsor(t_stack *stack);
 
 #endif
 

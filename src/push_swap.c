@@ -6,19 +6,15 @@ void ft_start(int argc, char **argv)
 	int i;
 	
 	stack.head_a = NULL;
+	stack.head_b = NULL;
+	stack.siza = 0;
 	i = 1;
 	while (argv[i])
-	{
-		addnodefinal(&stack, ft_atoi(argv[i]));
-		i++;
-	}
+		addnodefinal(&stack, ft_atoi(argv[i++]));
 	pri_stack(&stack);
-
-	if (stack.head_a->num > stack.head_a->next->num)
-		ft_sa(&stack);
-
-	pri_stack(&stack);
+	//initsort(&stack);
 	printf("argc = %d\n", argc);
+	printf("siza = %d\n", stack.siza);
 }
 
 int main(int argc, char **argv)
