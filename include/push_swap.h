@@ -30,7 +30,7 @@ void ft_pb(t_stack *stack);
 void ft_pa(t_stack *stack);
 
 //Sort
-void initsor(t_stack *stack);
+void startsort(t_stack *stack);
 
 #endif
 

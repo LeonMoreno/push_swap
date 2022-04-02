@@ -10,6 +10,7 @@ void ft_sa(t_stack *stack)
 	stack->head_a->next->next = stack->head_a;
 	stack->head_a->next = tmp;
 	stack->head_a = aux;
+	printf("sa\n");
 }
 
 void ft_rra(t_stack *stack)
@@ -27,6 +28,7 @@ void ft_rra(t_stack *stack)
 	beforef->next = stack->head_a;
 	stack->head_a = headref;
 	headref->next = tmp;
+	printf("rra\n");
 }
 
 void ft_pb(t_stack *stack)
@@ -46,6 +48,7 @@ void ft_pb(t_stack *stack)
 		tmp_a->next = stack->head_b;
 		stack->head_b = tmp_a;
 	}
+	printf("pb\n");
 }
 
 void ft_pa(t_stack *stack)
@@ -64,6 +67,7 @@ void ft_pa(t_stack *stack)
 		tmp_b->next = stack->head_a;
 		stack->head_a = tmp_b;
 	}
+	printf("pa\n");
 }
 
 a_node *ft_before(a_node *node, t_stack *stack)
