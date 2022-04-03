@@ -24,6 +24,8 @@ t_stack start_stack(char **argv)
 	int	i;
 
 	stack.siza = 0;
+	stack.head_a = NULL;
+	stack.head_b = NULL;
 	res_spa = parser_argv(argv);
 	if (res_spa == 0)
 	{
@@ -44,13 +46,11 @@ t_stack start_stack(char **argv)
 void ft_start(char **argv)
 {
 	t_stack stack;
-	
-	stack.head_a = NULL;
-	stack.head_b = NULL;
+
 	stack = start_stack(argv);
 	start_checker(&stack);
 	if (stack.inorder == 1)
-		exit (0);	
+		exit (0);
 	pri_stack(&stack);
 	startsort(&stack);
 

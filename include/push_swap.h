@@ -29,6 +29,7 @@ void ft_sa(t_stack *stack);
 void ft_rra(t_stack *stack);
 void ft_pb(t_stack *stack);
 void ft_pa(t_stack *stack);
+void ft_ra(t_stack *stack);
 
 //Sort
 void startsort(t_stack *stack);

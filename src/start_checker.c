@@ -10,9 +10,9 @@ void check_inorder(t_stack *stack)
 	headref = stack->head_a;
 	while (headref)
 	{
-		if (headref != stack->head_a && headref->num  == before + 1)
+		if (headref != stack->head_a &&  headref->next != NULL && headref->num  > before && headref->num < headref->next->num)
 			stack->inorder = 1;
-		else
+		else if (headref->next != NULL)
 			stack->inorder = 0;
 		before = headref->num;
 		headref = headref->next;

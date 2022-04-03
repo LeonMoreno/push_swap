@@ -4,8 +4,8 @@ void addnodefinal(t_stack *stack, int num)
 {
 	a_node *node;
 	a_node *aux;
-	
-	node = createnode(num, stack);	
+
+	node = createnode(num, stack);
 	if (stack->head_a == NULL)
 		stack->head_a = node;
 	else
@@ -34,7 +34,7 @@ a_node *createnode(int num, t_stack *stack)
 void pri_stack(t_stack *stack)
 {
 	a_node *headRef;
-	
+
 	printf("Stack A\n");
 	headRef = stack->head_a;
 	while (headRef)
@@ -47,10 +47,10 @@ void pri_stack(t_stack *stack)
 void pri_stack_b(t_stack *stack)
 {
 	a_node *headRef;
-	
+
 	printf("Stack B\n");
 	headRef = stack->head_b;
-	while (headRef)
+	while (headRef != NULL)
 	{
 		printf ("%d\n", headRef->num);
 		headRef = headRef->next;
