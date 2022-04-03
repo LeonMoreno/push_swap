@@ -14,6 +14,7 @@ typedef struct s_stack
 	a_node *head_a;
 	a_node *head_b;
 	int		siza;
+	int		inorder;
 } t_stack;
 
 //Struct et List
@@ -31,6 +32,9 @@ void ft_pa(t_stack *stack);
 
 //Sort
 void startsort(t_stack *stack);
+
+//Utils
+void start_checker(t_stack *stack);
 
 #endif
 
