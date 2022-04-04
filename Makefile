@@ -12,7 +12,7 @@ LIBFT  = $(addprefix $(LIBFT_DIR), $(LIBFT_A))
 
 
 #Sources files
-SRC_FILES	=	push_swap.c nodeManage.c utils.c init_sort01.c start_checker.c push_moves.c sa_moves.c rotate_moves.c reverse_moves.c
+SRC_FILES	=	push_swap.c nodeManage.c start_sort.c start_checker.c 01_moves.c 02_moves.c commons.c
 SRC			=	$(addprefix $(SRC_DIR), $(SRC_FILES))
 OBJ			= $(SRC:.c=.o)
 

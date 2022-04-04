@@ -1,13 +1,24 @@
-
 #include "push_swap.h"
 
-void ft_pb(t_stack *stack)
+void	ft_sa(t_stack *stack)
 {
-	a_node *tmp_a;
+	t_node	*aux;
+	t_node	*tmp;
+
+	tmp = stack->head_a->next->next;
+	aux = stack->head_a->next;
+	stack->head_a->next->next = stack->head_a;
+	stack->head_a->next = tmp;
+	stack->head_a = aux;
+	ft_printf("sa\n");
+}
+
+void	ft_pb(t_stack *stack)
+{
+	t_node	*tmp_a;
 
 	tmp_a = stack->head_a;
 	stack->head_a = stack->head_a->next;
-
 	if (stack->head_b == NULL)
 	{
 		tmp_a->next = NULL;
@@ -18,12 +29,12 @@ void ft_pb(t_stack *stack)
 		tmp_a->next = stack->head_b;
 		stack->head_b = tmp_a;
 	}
-	printf("pb\n");
+	ft_printf("pb\n");
 }
 
-void ft_pa(t_stack *stack)
+void	ft_pa(t_stack *stack)
 {
-	a_node *tmp_b;
+	t_node	*tmp_b;
 
 	tmp_b = stack->head_b;
 	stack->head_b = stack->head_b->next;
@@ -37,5 +48,5 @@ void ft_pa(t_stack *stack)
 		tmp_b->next = stack->head_a;
 		stack->head_a = tmp_b;
 	}
-	printf("pa\n");
+	ft_printf("pa\n");
 }

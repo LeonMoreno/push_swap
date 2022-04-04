@@ -1,34 +1,37 @@
 #include "push_swap.h"
 
-void check_inorder(t_stack *stack)
+void	check_inorder(t_stack *stack)
 {
-	a_node *headref;
-	int	before;
+	t_node	*headref;
+	int		nu_before;
+	int		num;
 
 	stack->inorder = 0;
-	before = 0;
+	nu_before = 0;
 	headref = stack->head_a;
+	num = headref->num;
 	while (headref)
 	{
-		if (headref != stack->head_a &&  headref->next != NULL && headref->num  > before && headref->num < headref->next->num)
+		if (headref != stack->head_a && headref->next != NULL
+			&& num > nu_before && num < headref->next->num)
 			stack->inorder = 1;
 		else if (headref->next != NULL)
 			stack->inorder = 0;
-		before = headref->num;
+		nu_before = num;
 		headref = headref->next;
 	}
 }
 
-void check_repet(t_stack *stack)
+void	check_repet(t_stack *stack)
 {
-	a_node *headext;
-	a_node *headint;
+	t_node	*headext;
+	t_node	*headint;
 
 	headext = stack->head_a;
-	while(headext)
+	while (headext)
 	{
 		headint = headext->next;
-		while(headint)
+		while (headint)
 		{
 			if (headext->num == headint->num)
 				exit (7);
@@ -38,7 +41,7 @@ void check_repet(t_stack *stack)
 	}
 }
 
-void start_checker(t_stack *stack)
+void	start_checker(t_stack *stack)
 {
 	check_inorder(stack);
 	check_repet(stack);
