@@ -13,6 +13,19 @@ void	ft_sa(t_stack *stack)
 	ft_printf("sa\n");
 }
 
+void	ft_sb(t_stack *stack)
+{
+	t_node	*aux;
+	t_node	*tmp;
+
+	tmp = stack->head_b->next->next;
+	aux = stack->head_b->next;
+	stack->head_b->next->next = stack->head_b;
+	stack->head_b->next = tmp;
+	stack->head_b = aux;
+	ft_printf("sb\n");
+}
+
 void	ft_pb(t_stack *stack)
 {
 	t_node	*tmp_a;

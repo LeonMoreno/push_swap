@@ -67,13 +67,13 @@ t_node	*ft_before(t_node *node, t_stack *stack)
 	return (headref);
 }
 
-int ft_lenlst(t_stack *stack)
+int ft_lenlst(t_node *n)
 {
 	t_node *href;
 	int i;
 
 	i = 0;
-	href = stack->head_a;
+	href = n;
 	while(href)
 	{
 		href = href->next;

@@ -2,7 +2,7 @@
 NAME 	= 	push_swap
 CC 		= 	gcc
 SRC_DIR =	src/
-CFLAGS	=	-Werror -Wall -Wextra -I include/
+CFLAGS	=	-g -Werror -Wall -Wextra -I include/
 RM		=	rm -f
 
 #libft

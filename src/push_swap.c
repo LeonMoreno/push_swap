@@ -49,13 +49,13 @@ void	ft_start(char **argv)
 
 	stack = start_stack(argv);
 	start_checker(&stack);
-	if (stack.inorder == 1)
-		exit (0);
-	pri_stack(&stack);
-	pri_stack_b(&stack);
+//	if (stack.inorder == 1)
+//		exit (0);
+//	pri_stack(&stack);
+//	pri_stack_b(&stack);
 	startsort(&stack);
 	pri_stack(&stack);
-	pri_stack_b(&stack);
+//	pri_stack_b(&stack);
 }
 
 int	main(int argc, char **argv)

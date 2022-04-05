@@ -6,16 +6,14 @@ void msg_err(char *msg_err)
 	exit(1);
 }
 
-int ft_pivote(t_stack *stack)
+int ft_pivote(t_node *n)
 {
 	int num;
 	t_node *href;
 
-	href = stack->head_a;
+	href = n;
 	while (href->next)
 		href = href->next;
 	num = href->num;
-
-
 	return(num);
 }

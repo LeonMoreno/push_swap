@@ -15,6 +15,21 @@ void	ft_ra(t_stack *stack)
 	ft_printf("ra\n");
 }
 
+void	ft_rb(t_stack *stack)
+{
+	t_node	*s;
+	t_node	*t;
+
+	s = stack->head_b;
+	t = stack->head_b->next;
+	while (s->next != NULL)
+		s = s->next;
+	stack->head_b->next = NULL;
+	s->next = stack->head_b;
+	stack->head_b = t;
+	ft_printf("rb\n");
+}
+
 void	ft_rra(t_stack *stack)
 {
 	t_node	*headref;
