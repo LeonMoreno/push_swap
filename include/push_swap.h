@@ -14,6 +14,7 @@ typedef struct s_stack
 	t_node	*head_a;
 	t_node	*head_b;
 	int		siza;
+	int		sizb;
 }	t_stack;
 
 //Struct et List
@@ -34,12 +35,13 @@ void	ft_rb(t_stack *stack);
 
 //Sort
 void	startsort(t_stack *stack);
+void start_quicksort_a(t_stack *stack, int len);
 
 //Utils
 void	start_checker(t_stack *stack);
 int ft_lenlst(t_node *n);
 int ft_pivote(t_node *n);
 int	check_inorder(t_stack *stack);
-
+int	ft_mayor(t_node *n);
 
 #endif

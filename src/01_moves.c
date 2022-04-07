@@ -32,6 +32,8 @@ void	ft_pb(t_stack *stack)
 
 	tmp_a = stack->head_a;
 	stack->head_a = stack->head_a->next;
+	stack->siza--;
+	stack->sizb++;
 	if (stack->head_b == NULL)
 	{
 		tmp_a->next = NULL;
@@ -50,6 +52,8 @@ void	ft_pa(t_stack *stack)
 	t_node	*tmp_b;
 
 	tmp_b = stack->head_b;
+	stack->sizb--;
+	stack->siza++;
 	stack->head_b = stack->head_b->next;
 	if (stack->head_a == NULL)
 	{

@@ -1,28 +1,14 @@
 #include "push_swap.h"
 
-	/* Mi idea inicial
-	 * if (stack->head_a->num > stack->head_a->next->num)
-	{
-		ft_sa(stack);
-		ft_pb(stack);
-	}
-	else
-		ft_pb(stack);
-	if (stack->head_a->num > stack->head_a->next->num)
-		ft_sa(stack);
-	ft_pa(stack);*/
 void	start_sort_three(t_stack *stack)
 {
 	int	p;
 	int	s;
 	int	t;
 
-	if (((ft_lenlst(stack->head_a)) == 3))
-	{
-		p = stack->head_a->num;
+	p = stack->head_a->num;
 	s = stack->head_a->next->num;
 	t = stack->head_a->next->next->num;
-
 		if (p < s && s > t && t > p)
 		{
 			ft_rra(stack);
@@ -39,109 +25,128 @@ void	start_sort_three(t_stack *stack)
 			ft_ra(stack);
 			ft_sa(stack);
 		}
-	}
-	else if ((ft_lenlst(stack->head_a)) == 2)
-	{
-		p = stack->head_a->num;
-		s = stack->head_a->next->num;
-
-		if (p > s)
-			ft_sa(stack);
-
-	}
-
 }
 
-void start_quicksort_a(t_stack *stack)
+void start_quicksort_3(t_stack *stack, int len)
 {
-	int pivote;
-	t_node *href;
-	int len;
-	int i;
 
-	len = ft_lenlst(stack->head_a);
+	if (len == 2)
+	{
+		if (stack->head_a->num < stack->head_a->next->num)
+			ft_sa(stack);
+	}
+	else if (len == 3 && stack->siza == 3)
+		start_sort_three(stack);
+}
+
+void ft_bublesort(int *arr, int len)
+{
+	int i;
+	int j;
+	int tmp;
+
 	i = 0;
-	if (check_inorder(stack))
+	while (i < len -1)
+	{
+		j = 0;
+		while (j < (len - i - 1))
+		{
+			if (arr[j] > arr[j + 1])
+			{
+				tmp = arr[j];
+				arr[j] = arr[j + 1];
+				arr[j + 1] = tmp;
+			}
+			j++;
+		}
+		i++;
+	}
+}
+
+int ft_getpivote(t_stack *stack, int len)
+{
+	int *arr;
+	t_node *s;
+	int i;
+	int pivote;
+
+	i = 0;
+	s = stack->head_a;
+	arr = malloc(sizeof(int) * len);
+	if (!arr)
+		return (0);
+	while (s && len > i)
+	{
+		arr[i] = s->num;
+		s = s->next;
+		i++;
+	}
+	i = 0;
+	ft_bublesort(arr, len);
+	pivote = arr[len / 2];
+	return (pivote);
+}
+
+ void start_quicksort_a(t_stack *stack, int len)
+ {
+	t_node *s;
+	int pivote;
+	int nodes;
+	int chu;
+
+	 printf("len = %d\n", len);
+	if (check_inorder(stack) == 1)
 		return ;
 	if (len <= 3)
-		start_sort_three(stack);
-	else
-	{
-		href = stack->head_a;
-		pivote = ft_pivote(stack->head_a);
-		while (i < len && href)
 		{
-			//printf("Entro i = %d  NUm = %d\n", i, href->num);
-			if (href->num <= pivote)
-				ft_pb(stack);
-			else if (href->num > pivote)
-				ft_ra(stack);
-			href = stack->head_a;
-			i++;
-		}
-	start_quicksort_a(stack);
-	}
-}
-
-void start_quicksort_b(t_stack *stack)
-{
-	int pivote;
-	t_node *href;
-	int len;
-	int i;
-
-	len = ft_lenlst(stack->head_b);
-
-	href = stack->head_b;
-	pivote = ft_pivote(stack->head_b);
-
-	i = 0;
-	if (len == 1)
-		{
-			ft_pa(stack);
+			start_quicksort_3(stack, len);
 			return ;
 		}
-	if (len <= 2)
-	{
-		//printf("AQUI YOY LEN = %d\n", len);
-		//pri_stack_b(stack);
-		if (stack->head_b->num < stack->head_b->next->num)
-			{
-				ft_sb(stack);
-				ft_pa(stack);
-				//ft_pa(stack);
-			}
-		else
-		{
-			ft_pa(stack);
-			ft_pa(stack);
-		}
+	s = stack->head_a;
+	nodes = len;
+	chu = 0;
+	pivote = ft_getpivote(stack, len);
+	printf ("pivote = %d\n", pivote);
 
-	}
-	else
+	 while (s && len != (nodes / 2 + 1))
+	 {
+		 if (s->num < pivote)
+		 	{
+				 ft_pb(stack);
+				 len--;
+			 }
+		 else
+		 	{
+				ft_ra(stack);
+				chu++;
+		 	}
+		s = stack->head_a;
+	 }
+	 while (nodes / 2 + 1 != stack->siza && chu)
 		{
-		while (i < len && href)
-		{
-			//printf("Estoy Aqui? i = %d\n", i);
-			if (href->num >= pivote)
-				ft_pa(stack);
-			else if (href->num < pivote)
-				ft_rb(stack);
-			href = stack->head_b;
-			i++;
+			ft_rra(stack);
+			chu--;
 		}
-		start_quicksort_b(stack);
-		}
-}
+		printf ("SIZA = %d\n", stack->siza);
+		printf ("SIZ_B = %d\n", stack->sizb);
+	 start_quicksort_a(stack, nodes / 2 + 1);
+ }
+
+// void start_quicksort_b(t_stack *stack, int len)
+// {
+// 	int pivote;
+// 	int nodes;
+// 	t_node *s;
+
+// }
+
 
 void	startsort(t_stack *stack)
 {
-	if (stack->siza >= 2)
-		start_sort_three(stack);
-	if (stack->siza > 3){
-		start_quicksort_a(stack);
-		//pri_stack(stack);
-		start_quicksort_b(stack);
-	}
-
+		if (stack->siza == 2)
+			ft_sa(stack);
+		else if (stack->siza == 3)
+			start_sort_three(stack);
+		else
+		start_quicksort_a(stack, stack->siza);
 }
