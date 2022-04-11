@@ -15,15 +15,21 @@ int	check_inorder(t_stack *stack)
 		num = headref->num;
 		if (headref != stack->head_a && headref->next != NULL
 			&& num > nu_before && num < headref->next->num)
+			{
+				//printf("IF before = %d -- num = % d -- next = %d\n", nu_before, num, headref->next->num);
 				inorder = 1;
-		else if (headref->next != NULL)
+			}
+
+		else if (headref != stack->head_a && headref->next != NULL)
 		{
+		//	printf("ELSE before = %d -- num = % d -- next = %d\n", nu_before, num, headref->next->num);
 			inorder = 0;
 			break;
 		}
 		nu_before = num;
 		headref = headref->next;
 	}
+	//printf("INOrder = %d\n", inorder);
 	return(inorder);
 }
 
@@ -39,20 +45,24 @@ int  ft_check_inverse_order(t_stack *stack)
 	s = stack->head_a;
 	while(s)
 	{
-		num = s->next->num;
+		num = s->num;
 		if (s != stack->head_a && s->next != NULL
 			&& num < before && num > s->next->num)
-			ordes = 1;
-		else if (s->next != NULL)
 			{
-				printf("before = %d -- num = % d -- next = %d\n", before, num, s->next->num);
+			//	printf("IF before = %d -- num = % d -- next = %d\n", before, num, s->next->num);
+				ordes = 1;
+			}
+
+		else if (s != stack->head_a  && s->next != NULL)
+			{
+			//	printf("ELSE before = %d -- num = % d -- next = %d\n", before, num, s->next->num);
 				ordes  = 0;
 				break;
 			}
 		before = num;
 		s = s->next;
 	}
-	printf("ordes = %d\n", ordes);
+	//printf("ordes = %d\n", ordes);
 	return (ordes);
 }
 
@@ -94,8 +104,7 @@ int	ft_mayor(t_node *n)
 
 void	start_checker(t_stack *stack)
 {
-	//if (check_inorder(stack))
-	//	exit (0);
-	ft_check_inverse_order(stack);
+	if (check_inorder(stack))
+		exit (0);
 	check_repet(stack);
 }

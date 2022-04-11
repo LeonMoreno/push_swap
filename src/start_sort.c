@@ -39,6 +39,20 @@ void start_quicksort_3(t_stack *stack, int len)
 		start_sort_three(stack);
 }
 
+void start_quicksort_3_b(t_stack *stack, int len)
+{
+	if (len == 1)
+		ft_pa(stack);
+	else if (len == 2)
+		{
+			if (stack->head_b->num < stack->head_b->next->num)
+				ft_sb(stack);
+			ft_pa(stack);
+			ft_pa(stack);
+		}
+
+}
+
 void ft_bublesort(int *arr, int len)
 {
 	int i;
@@ -63,7 +77,7 @@ void ft_bublesort(int *arr, int len)
 	}
 }
 
-int ft_getpivote(t_stack *stack, int len)
+int ft_getpivote(t_node *n, int len)
 {
 	int *arr;
 	t_node *s;
@@ -71,7 +85,7 @@ int ft_getpivote(t_stack *stack, int len)
 	int pivote;
 
 	i = 0;
-	s = stack->head_a;
+	s = n;
 	arr = malloc(sizeof(int) * len);
 	if (!arr)
 		return (0);
@@ -105,7 +119,7 @@ int ft_getpivote(t_stack *stack, int len)
 	s = stack->head_a;
 	nodes = len;
 	chu = 0;
-	pivote = ft_getpivote(stack, len);
+	pivote = ft_getpivote(stack->head_a, len);
 	printf ("pivote = %d\n", pivote);
 
 	 while (s && len != (nodes / 2 + 1))
@@ -130,16 +144,51 @@ int ft_getpivote(t_stack *stack, int len)
 		printf ("SIZA = %d\n", stack->siza);
 		printf ("SIZ_B = %d\n", stack->sizb);
 	 start_quicksort_a(stack, nodes / 2 + 1);
+	 start_quicksort_b(stack, nodes / 2);
  }
 
-// void start_quicksort_b(t_stack *stack, int len)
-// {
-// 	int pivote;
-// 	int nodes;
-// 	t_node *s;
+void start_quicksort_b(t_stack *stack, int len)
+{
+	t_node *s;
+	int pivote;
+	int nodes;
+	int chu;
 
-// }
+	printf("LEN B = %d\n", len);
 
+	if (ft_check_inverse_order(stack))
+		while (len)
+			{
+				ft_pa(stack);
+				len--;
+				return ;
+			}
+	if (len <= 3)
+		{
+			start_quicksort_3_b(stack, len);
+			return ;
+		}
+	s = stack->head_b;
+	nodes = len;
+	chu = 0;
+	pivote = ft_getpivote(stack->head_b, len);
+	printf("pivote B = %d Y LEN = %d\n", pivote, len);
+	while (s && len != (nodes / 2 + 1))
+	 {
+		 if (s->num > pivote)
+		 	{
+				 ft_pb(stack);
+				 len--;
+			 }
+		 else
+		 	{
+				ft_rb(stack);
+				chu++;
+		 	}
+		s = stack->head_b;
+	 }
+
+}
 
 void	startsort(t_stack *stack)
 {
