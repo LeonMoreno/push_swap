@@ -40,9 +40,27 @@ void	ft_rra(t_stack *stack)
 	headref = stack->head_a;
 	while (headref->next != NULL)
 		headref = headref->next;
-	beforef = ft_before(headref, stack);
+	beforef = ft_before(headref, stack->head_a);
 	beforef->next = NULL;
 	stack->head_a = headref;
 	headref->next = tmp;
 	ft_printf("rra\n");
+}
+
+void	ft_rrb(t_stack *stack)
+{
+	t_node	*headref;
+	t_node	*beforef;
+	t_node	*tmp;
+
+	tmp = stack->head_b;
+	headref = stack->head_b;
+	//pri_stack_b(stack);
+	while (headref->next != NULL)
+		headref = headref->next;
+	beforef = ft_before(headref, stack->head_b);
+	beforef->next = NULL;
+	stack->head_b = headref;
+	headref->next = tmp;
+	ft_printf("rrb\n");
 }

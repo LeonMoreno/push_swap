@@ -50,10 +50,10 @@ void	ft_start(char **argv)
 
 	stack = start_stack(argv);
 	start_checker(&stack);
-	pri_stack(&stack);
-	startsort(&stack);
-	pri_stack(&stack);
+//	pri_stack(&stack);
 //	pri_stack_b(&stack);
+	startsort(&stack);
+//	pri_stack(&stack);
 }
 
 int	main(int argc, char **argv)

@@ -57,11 +57,11 @@ void	pri_stack_b(t_stack *stack)
 	}
 }
 
-t_node	*ft_before(t_node *node, t_stack *stack)
+t_node	*ft_before(t_node *node, t_node *stack)
 {
 	t_node	*headref;
 
-	headref = stack->head_a;
+	headref = stack;
 	while (headref && node->num != headref->next->num)
 		headref = headref->next;
 	return (headref);
