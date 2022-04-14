@@ -43,8 +43,8 @@ void start_quicksort_b(t_stack *stack, int len);
 void	start_checker(t_stack *stack);
 int ft_lenlst(t_node *n);
 int ft_pivote(t_node *n);
-int	check_inorder(t_stack *stack);
-int ft_check_inverse_order(t_stack *stack);
+int	check_inorder(t_stack *stack, int len);
+int ft_check_inverse_order(t_stack *stack, int len);
 int	ft_mayor(t_node *n);
 
 #endif

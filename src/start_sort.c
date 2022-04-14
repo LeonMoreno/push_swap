@@ -244,7 +244,7 @@ int ft_getpivote(t_node *n, int len)
 	int chu;
 
 //	 printf("len = %d // siza = %d \n", len, stack->siza);
-	if (check_inorder(stack) == 1)
+	if (check_inorder(stack, len) == 1)
 	{
 	//	printf("ORDENADO SE VA POR AQUI\n");
 		return ;
@@ -298,7 +298,7 @@ void start_quicksort_b(t_stack *stack, int len)
 
 //	printf("LEN B = %d y SIZB = %d\n", len, stack->sizb);
 //	pri_stack_b(stack);
-	if (ft_check_inverse_order(stack))
+	if (ft_check_inverse_order(stack, len))
 	{
 		while (len)
 			{
@@ -332,6 +332,11 @@ void start_quicksort_b(t_stack *stack, int len)
 				chu++;
 		 	}
 		s = stack->head_b;
+	 }
+	 while (nodes / 2 + nodes % 2 != stack->sizb && chu)
+	 {
+		 ft_rrb(stack);
+		 chu--;
 	 }
 	 start_quicksort_a(stack, nodes / 2 + nodes % 2);
 	 start_quicksort_b(stack, nodes / 2);
