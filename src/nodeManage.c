@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   nodeManage.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lmoreno <lmoreno@student.42quebec.com>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/14 17:06:03 by lmoreno           #+#    #+#             */
+/*   Updated: 2022/04/14 17:12:16 by lmoreno          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	addnodefinal(t_stack *stack, int num)
@@ -31,26 +43,12 @@ t_node	*createnode(int num, t_stack *stack)
 	return (new);
 }
 
-void	pri_stack(t_stack *stack)
+void	print_stack(t_node *s)
 {
 	t_node	*headref;
 
-	printf("Stack A\n");
-	headref = stack->head_a;
+	headref = s;
 	while (headref)
-	{
-		printf ("%d\n", headref->num);
-		headref = headref->next;
-	}
-}
-
-void	pri_stack_b(t_stack *stack)
-{
-	t_node	*headref;
-
-	printf("Stack B\n");
-	headref = stack->head_b;
-	while (headref != NULL)
 	{
 		printf ("%d\n", headref->num);
 		headref = headref->next;
@@ -67,14 +65,14 @@ t_node	*ft_before(t_node *node, t_node *stack)
 	return (headref);
 }
 
-int ft_lenlst(t_node *n)
+int	ft_lenlst(t_node *n)
 {
-	t_node *href;
-	int i;
+	t_node	*href;
+	int		i;
 
 	i = 0;
 	href = n;
-	while(href)
+	while (href)
 	{
 		href = href->next;
 		i++;

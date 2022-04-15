@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lmoreno <lmoreno@student.42quebec.com>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/14 16:49:16 by lmoreno           #+#    #+#             */
+/*   Updated: 2022/04/14 20:01:41 by lmoreno          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 int	parser_argv(char **argv)
@@ -50,10 +62,7 @@ void	ft_start(char **argv)
 
 	stack = start_stack(argv);
 	start_checker(&stack);
-//	pri_stack(&stack);
-//	pri_stack_b(&stack);
 	startsort(&stack);
-//	pri_stack(&stack);
 }
 
 int	main(int argc, char **argv)

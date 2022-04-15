@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   02_moves.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lmoreno <lmoreno@student.42quebec.com>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/14 17:04:21 by lmoreno           #+#    #+#             */
+/*   Updated: 2022/04/14 17:04:30 by lmoreno          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	ft_ra(t_stack *stack)
@@ -55,7 +67,6 @@ void	ft_rrb(t_stack *stack)
 
 	tmp = stack->head_b;
 	headref = stack->head_b;
-	//pri_stack_b(stack);
 	while (headref->next != NULL)
 		headref = headref->next;
 	beforef = ft_before(headref, stack->head_b);
