@@ -6,7 +6,7 @@
 /*   By: lmoreno <lmoreno@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 17:01:39 by lmoreno           #+#    #+#             */
-/*   Updated: 2022/04/14 17:03:47 by lmoreno          ###   ########.fr       */
+/*   Updated: 2022/04/15 15:44:22 by lmoreno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,7 +118,7 @@ int	ft_check_inverse_order(t_stack *stack, int len)
 	return (1);
 }
 
-void	check_repet(t_stack *stack)
+static	void	check_repet(t_stack *stack)
 {
 	t_node	*headext;
 	t_node	*headint;
@@ -130,27 +130,14 @@ void	check_repet(t_stack *stack)
 		while (headint)
 		{
 			if (headext->num == headint->num)
+			{
+				ft_putstr_fd("Error\n", 2);
 				exit (7);
+			}
 			headint = headint->next;
 		}
 		headext = headext->next;
 	}
-}
-
-int	ft_mayor(t_node *n)
-{
-	t_node	*h;
-	int		mayor;
-
-	h = n;
-	mayor = -2147483648;
-	while (h)
-	{
-		if (h->num > mayor)
-			mayor = h->num;
-		h = h->next;
-	}
-	return (mayor);
 }
 
 void	start_checker(t_stack *stack)

@@ -6,7 +6,7 @@
 /*   By: lmoreno <lmoreno@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 17:04:10 by lmoreno           #+#    #+#             */
-/*   Updated: 2022/04/14 17:04:11 by lmoreno          ###   ########.fr       */
+/*   Updated: 2022/04/15 14:32:42 by lmoreno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_sa(t_stack *stack)
 	stack->head_a->next->next = stack->head_a;
 	stack->head_a->next = tmp;
 	stack->head_a = aux;
-	ft_printf("sa\n");
+	ft_putstr_fd("sa\n", 1);
 }
 
 void	ft_sb(t_stack *stack)
@@ -35,7 +35,7 @@ void	ft_sb(t_stack *stack)
 	stack->head_b->next->next = stack->head_b;
 	stack->head_b->next = tmp;
 	stack->head_b = aux;
-	ft_printf("sb\n");
+	ft_putstr_fd("sb\n", 1);
 }
 
 void	ft_pb(t_stack *stack)
@@ -56,7 +56,7 @@ void	ft_pb(t_stack *stack)
 		tmp_a->next = stack->head_b;
 		stack->head_b = tmp_a;
 	}
-	ft_printf("pb\n");
+	ft_putstr_fd("pb\n", 1);
 }
 
 void	ft_pa(t_stack *stack)
@@ -77,5 +77,5 @@ void	ft_pa(t_stack *stack)
 		tmp_b->next = stack->head_a;
 		stack->head_a = tmp_b;
 	}
-	ft_printf("pa\n");
+	ft_putstr_fd("pa\n", 1);
 }

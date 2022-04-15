@@ -6,7 +6,7 @@
 /*   By: lmoreno <lmoreno@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 17:04:21 by lmoreno           #+#    #+#             */
-/*   Updated: 2022/04/14 17:04:30 by lmoreno          ###   ########.fr       */
+/*   Updated: 2022/04/15 14:25:29 by lmoreno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_ra(t_stack *stack)
 	stack->head_a->next = NULL;
 	s->next = stack->head_a;
 	stack->head_a = t;
-	ft_printf("ra\n");
+	ft_putstr_fd("ra\n", 1);
 }
 
 void	ft_rb(t_stack *stack)
@@ -39,7 +39,7 @@ void	ft_rb(t_stack *stack)
 	stack->head_b->next = NULL;
 	s->next = stack->head_b;
 	stack->head_b = t;
-	ft_printf("rb\n");
+	ft_putstr_fd("rb\n", 1);
 }
 
 void	ft_rra(t_stack *stack)
@@ -56,7 +56,7 @@ void	ft_rra(t_stack *stack)
 	beforef->next = NULL;
 	stack->head_a = headref;
 	headref->next = tmp;
-	ft_printf("rra\n");
+	ft_putstr_fd("rra\n", 1);
 }
 
 void	ft_rrb(t_stack *stack)
@@ -73,5 +73,5 @@ void	ft_rrb(t_stack *stack)
 	beforef->next = NULL;
 	stack->head_b = headref;
 	headref->next = tmp;
-	ft_printf("rrb\n");
+	ft_putstr_fd("rrb\n", 1);
 }

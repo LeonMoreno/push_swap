@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lmoreno <leon.moreno@pm.me>                +#+  +:+       +#+        */
+/*   By: lmoreno <lmoreno@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 13:12:44 by LeoMoreno         #+#    #+#             */
-/*   Updated: 2022/02/22 16:46:24 by lmoreno          ###   ########.fr       */
+/*   Updated: 2022/04/15 15:40:15 by lmoreno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 /* Functions TO */
 int		ft_toupper(int c);
 int		ft_tolower(int c);
-int		ft_atoi(const char *str);
+long int		ft_atoi(const char *str);
 char	*ft_itoa(int n);
 
 /* Functions PUT */

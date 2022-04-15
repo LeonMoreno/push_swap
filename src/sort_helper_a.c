@@ -6,7 +6,7 @@
 /*   By: lmoreno <lmoreno@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 17:59:55 by lmoreno           #+#    #+#             */
-/*   Updated: 2022/04/14 18:38:13 by lmoreno          ###   ########.fr       */
+/*   Updated: 2022/04/15 14:15:58 by lmoreno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	start_sort_three(t_stack *stack)
 	}
 }
 
-void	p_a_bigger(t_stack *stack, int p, int s, int t)
+static	void	p_a_bigger(t_stack *stack, int p, int s, int t)
 {
 	if (p > s && s > t && t < p)
 	{
@@ -62,7 +62,7 @@ void	p_a_bigger(t_stack *stack, int p, int s, int t)
 	}
 }
 
-void	p_a_smaller(t_stack *stack, int p, int s, int t)
+static	void	p_a_smaller(t_stack *stack, int p, int s, int t)
 {
 	if (p < s && s > t && t > p)
 	{
@@ -74,10 +74,8 @@ void	p_a_smaller(t_stack *stack, int p, int s, int t)
 	{
 		ft_pb(stack);
 		ft_sa(stack);
-		ft_pb(stack);
-		ft_sb(stack);
 		ft_pa(stack);
-		ft_pa(stack);
+		ft_sa(stack);
 	}
 }
 

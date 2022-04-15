@@ -6,7 +6,7 @@
 /*   By: lmoreno <lmoreno@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 20:04:40 by lmoreno           #+#    #+#             */
-/*   Updated: 2022/04/14 20:05:11 by lmoreno          ###   ########.fr       */
+/*   Updated: 2022/04/15 15:43:39 by lmoreno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,11 +56,11 @@ void	start_sort_three(t_stack *stack);
 //Utils
 void	start_checker(t_stack *stack);
 int		ft_lenlst(t_node *n);
-int		ft_pivote(t_node *n);
 int		check_inorder(t_stack *stack, int len);
 int		ft_check_inverse_order(t_stack *stack, int len);
-int		ft_mayor(t_node *n);
 int		ft_getpivote(t_node *n, int len);
 void	ft_bublesort(int *arr, int len);
+void 	fre_lst(t_stack *stack);
+void 	fre_res_split(char **res_split);
 
 #endif

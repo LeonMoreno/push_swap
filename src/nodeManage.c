@@ -6,7 +6,7 @@
 /*   By: lmoreno <lmoreno@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 17:06:03 by lmoreno           #+#    #+#             */
-/*   Updated: 2022/04/14 17:12:16 by lmoreno          ###   ########.fr       */
+/*   Updated: 2022/04/15 15:43:47 by lmoreno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,19 +63,4 @@ t_node	*ft_before(t_node *node, t_node *stack)
 	while (headref && node->num != headref->next->num)
 		headref = headref->next;
 	return (headref);
-}
-
-int	ft_lenlst(t_node *n)
-{
-	t_node	*href;
-	int		i;
-
-	i = 0;
-	href = n;
-	while (href)
-	{
-		href = href->next;
-		i++;
-	}
-	return (i);
 }

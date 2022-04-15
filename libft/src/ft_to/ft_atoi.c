@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: LeoMoreno <lmoreno@student.42quebec.com    +#+  +:+       +#+        */
+/*   By: lmoreno <lmoreno@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 14:17:02 by LeoMoreno         #+#    #+#             */
-/*   Updated: 2021/11/04 18:04:15 by LeoMoreno        ###   ########.fr       */
+/*   Updated: 2022/04/15 15:40:46 by lmoreno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ static int	ft_space(int c)
 	return (0);
 }
 
-int	ft_atoi(const char *str)
+long int	ft_atoi(const char *str)
 {
 	int	sing;
-	int	res;
+	long	int	res;
 
 	sing = 1;
 	res = 0;

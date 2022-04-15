@@ -6,13 +6,13 @@
 /*   By: lmoreno <lmoreno@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 16:49:16 by lmoreno           #+#    #+#             */
-/*   Updated: 2022/04/14 20:01:41 by lmoreno          ###   ########.fr       */
+/*   Updated: 2022/04/15 15:44:40 by lmoreno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	parser_argv(char **argv)
+static	int	parser_argv(char **argv)
 {
 	int	i;
 	int	spa;
@@ -28,12 +28,13 @@ int	parser_argv(char **argv)
 	return (0);
 }
 
-t_stack	start_stack(char **argv)
+static	t_stack	start_stack(char **argv)
 {
 	t_stack	stack;
 	char	**res_split;
 	int		res_spa;
 	int		i;
+	long	int		num;
 
 	stack.siza = 0;
 	stack.sizb = 0;
@@ -44,7 +45,14 @@ t_stack	start_stack(char **argv)
 	{
 		i = 1;
 		while (argv[i])
-			addnodefinal(&stack, ft_atoi(argv[i++]));
+		{
+			num = ft_atoi(argv[i]);
+			if (num < INT_MIN || num > INT_MAX)
+				printf("Mayor BRAVO\n");
+			addnodefinal(&stack, num);
+			i++;
+		}
+
 	}
 	else
 	{
@@ -52,24 +60,22 @@ t_stack	start_stack(char **argv)
 		res_split = ft_split(argv[1], ' ');
 		while (res_split[i])
 			addnodefinal(&stack, ft_atoi(res_split[i++]));
+		fre_res_split(res_split);
 	}
 	return (stack);
 }
 
-void	ft_start(char **argv)
+int	main(int argc, char **argv)
 {
 	t_stack	stack;
 
-	stack = start_stack(argv);
-	start_checker(&stack);
-	startsort(&stack);
-}
-
-int	main(int argc, char **argv)
-{
-	if (argc == 1)
-		ft_printf("Mal No Argumentos\n");
 	if (argc >= 2)
-		ft_start(argv);
+	{
+		stack = start_stack(argv);
+		start_checker(&stack);
+		startsort(&stack);
+		print_stack(stack.head_a);
+		fre_lst(&stack);
+	}
 	return (0);
 }
