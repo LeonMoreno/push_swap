@@ -6,7 +6,7 @@
 /*   By: lmoreno <lmoreno@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 14:17:02 by LeoMoreno         #+#    #+#             */
-/*   Updated: 2022/04/15 15:40:46 by lmoreno          ###   ########.fr       */
+/*   Updated: 2022/04/16 09:10:44 by lmoreno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ static int	ft_space(int c)
 	return (0);
 }
 
-long int	ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
 	int	sing;
-	long	int	res;
+	int	res;
 
 	sing = 1;
 	res = 0;

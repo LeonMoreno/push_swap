@@ -6,7 +6,7 @@
 /*   By: lmoreno <lmoreno@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 17:01:39 by lmoreno           #+#    #+#             */
-/*   Updated: 2022/04/15 15:44:22 by lmoreno          ###   ########.fr       */
+/*   Updated: 2022/04/16 10:35:29 by lmoreno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,10 +130,7 @@ static	void	check_repet(t_stack *stack)
 		while (headint)
 		{
 			if (headext->num == headint->num)
-			{
-				ft_putstr_fd("Error\n", 2);
-				exit (7);
-			}
+				msg_err();
 			headint = headint->next;
 		}
 		headext = headext->next;

@@ -6,15 +6,15 @@
 /*   By: lmoreno <lmoreno@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 17:04:46 by lmoreno           #+#    #+#             */
-/*   Updated: 2022/04/15 14:04:03 by lmoreno          ###   ########.fr       */
+/*   Updated: 2022/04/16 10:29:34 by lmoreno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	msg_err(char *msg_err)
+void	msg_err(void)
 {
-	write(2, msg_err, ft_strlen(msg_err));
+	ft_putstr_fd("Error\n", 2);
 	exit(1);
 }
 

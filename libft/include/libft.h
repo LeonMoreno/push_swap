@@ -6,7 +6,7 @@
 /*   By: lmoreno <lmoreno@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 13:12:44 by LeoMoreno         #+#    #+#             */
-/*   Updated: 2022/04/15 15:40:15 by lmoreno          ###   ########.fr       */
+/*   Updated: 2022/04/16 09:11:09 by lmoreno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 /* Functions TO */
 int		ft_toupper(int c);
 int		ft_tolower(int c);
-long int		ft_atoi(const char *str);
+int		ft_atoi(const char *str);
 char	*ft_itoa(int n);
 
 /* Functions PUT */
